@@ -139,7 +139,7 @@ struct ContentView: View {
                 }
             
             
-            print("Incorrect")
+            print("Incorrect!")
             numarIntrebare += 1
         }
         raspunsText = ""
