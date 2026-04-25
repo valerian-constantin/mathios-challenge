@@ -14,7 +14,6 @@ Created as a consolidation challenge during the [100 Days of SwiftUI](https://ww
 - Score tracker with animated number transitions
 - Custom full-screen overlays for correct, incorrect, empty answer, and finish states
 - Playful UI with radial gradients, wool texture effect, and custom images
-- Romanian language interface
 
 ---
 
