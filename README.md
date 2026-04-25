@@ -42,7 +42,7 @@ Created as a consolidation challenge during the [100 Days of SwiftUI](https://ww
 ---
 ## 🖼 Screenshots
 
-<img width="1504" height="2474" alt="B384050C-5883-4322-809C-937D6257193F_1_201_a" src="https://github.com/user-attachments/assets/89d2dc12-40ab-4fbb-a113-6c2a8fc2f4bd" />
+<img width="350" height="576" alt="B384050C-5883-4322-809C-937D6257193F_1_201_a" src="https://github.com/user-attachments/assets/89d2dc12-40ab-4fbb-a113-6c2a8fc2f4bd" />
 
 
 ---
