@@ -188,7 +188,7 @@ struct ContentView: View {
                     Spacer()
                     VStack(spacing: 30) {
                         //container selectare tabla inmultirii
-                        Text("Tabla inmultirii").frame(maxWidth: .infinity, alignment: .leading).font(.system(.title)).foregroundStyle(.white).fontWeight(.bold)
+                        Text("Multiplication Table").frame(maxWidth: .infinity, alignment: .leading).font(.system(.title)).foregroundStyle(.white).fontWeight(.bold)
                         VStack {
                             HStack(spacing: 15) {
                                 ForEach(1..<6) { numar in
@@ -252,7 +252,7 @@ struct ContentView: View {
                     }.padding()
                     VStack(spacing: 30) {
                         //container selectare tabla inmultirii
-                        Text("Numar intrebari").frame(maxWidth: .infinity, alignment: .leading).font(.system(.title)).foregroundStyle(.white).fontWeight(.bold)
+                        Text("Questions").frame(maxWidth: .infinity, alignment: .leading).font(.system(.title)).foregroundStyle(.white).fontWeight(.bold)
                         VStack {
                             HStack(spacing: 20) {
                                 ForEach(numereIntrebari.indices, id: \.self) { i in
@@ -371,7 +371,7 @@ struct ContentView: View {
                     
                     VStack(spacing: 30) {
                         //container intrebare
-                        Text("Intrebarea \(numarIntrebare+1)/\((numarIntrebari ?? 0) - 1)").frame(maxWidth: .infinity, alignment: .center).font(.system(size: 35)).foregroundStyle(.white).fontWeight(.bold)
+                        Text("Question \(numarIntrebare+1)/\((numarIntrebari ?? 0) - 1)").frame(maxWidth: .infinity, alignment: .center).font(.system(size: 35)).foregroundStyle(.white).fontWeight(.bold)
                         VStack {
                             
                           
@@ -412,7 +412,7 @@ struct ContentView: View {
                     VStack(spacing: 30) {
                         //container raspuns
                         HStack(spacing: 0) {
-                            Text("Raspuns:").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 30)).foregroundStyle(.white).fontWeight(.bold).padding()
+                            Text("Answer:").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 30)).foregroundStyle(.white).fontWeight(.bold).padding()
                             TextField("", text: $raspunsText)
                                 .font(.system(size: 30))
                                 .fontWeight(.bold)
@@ -433,7 +433,7 @@ struct ContentView: View {
                                 .toolbar {
                                     ToolbarItemGroup(placement: .keyboard) {
                                         Spacer()
-                                        Button("Verifica") {
+                                        Button("Verify") {
                                             let raspunsInt = Int(raspunsText) ?? 0
                                             verificareRaspuns(raspunsInt: raspunsInt)
                                             eFocusat = false
@@ -451,7 +451,7 @@ struct ContentView: View {
                     HStack {
                         
                         VStack(spacing: 3) {
-                            Text("Scorul este").foregroundStyle(.secondary)
+                            Text("Score is").foregroundStyle(.secondary)
                             Text("\(score)")
                                 .font(.system(size: 25))
                                 .contentTransition(.numericText())
@@ -529,7 +529,7 @@ struct ContentView: View {
                             
                             
                         } label: {
-                            Text("Verifica")
+                            Text("Verify")
                                 .foregroundStyle(Color(hex: "245c4c"))
                                 .fontWeight(.bold)
                                 .font(.system(size: 25))
@@ -583,7 +583,7 @@ struct ContentView: View {
                         Image("gresit")
                             .resizable()
                             .frame(width: 200, height: 200)
-                        Text("Gresit! 😾")
+                        Text("Wrong! 😾")
                             .fontWeight(.bold)
                             .font(.system(size: 30))
                             .padding()
@@ -605,7 +605,7 @@ struct ContentView: View {
                         Image("finish")
                             .resizable()
                             .frame(width: 300, height: 300)
-                        Text("Gata! 🐈")
+                        Text("Done! 🐈")
                             .fontWeight(.bold)
                             .font(.system(size: 30))
                             .padding()
@@ -627,7 +627,7 @@ struct ContentView: View {
                         Image("gol")
                             .resizable()
                             .frame(width: 300, height: 300)
-                        Text("NU POTI AVEA RASPUNS GOL!")
+                        Text("YOU CANNOT HAVE AN EMPTY ANSWER!")
                             .fontWeight(.bold)
                             .font(.system(size: 30))
                             .padding()
