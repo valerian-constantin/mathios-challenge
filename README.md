@@ -40,8 +40,12 @@ Created as a consolidation challenge during the [100 Days of SwiftUI](https://ww
 5. See your final score when the round ends 🎉
 
 ---
+## 🖼 Screenshots
+
+<img width="1504" height="2474" alt="B384050C-5883-4322-809C-937D6257193F_1_201_a" src="https://github.com/user-attachments/assets/89d2dc12-40ab-4fbb-a113-6c2a8fc2f4bd" />
 
 
+---
 ## 👨‍💻 Built by
 
 Valentin Constantin — iOS development learner, working through [Hacking with Swift](https://www.hackingwithswift.com).
