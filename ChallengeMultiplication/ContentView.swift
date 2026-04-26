@@ -169,68 +169,73 @@ struct ContentView: View {
           
             
             if hasStarted == false {
-                RadialGradient(
-                                gradient: Gradient(colors: [
-                                    Color(hex: "76c945"), // Verdele deschis din centru
-                                    Color(hex: "4a932c")  // Verdele mai închis de la margini
-                                ]),
-                                center: .center,       // Începe din mijloc
-                                startRadius: 20,       // Raza unde începe prima culoare
-                                endRadius: 500         // Raza unde se termină a doua culoare
-                            )
-                .ignoresSafeArea()
-                WoolTexture()
-                                .opacity(15)
-                    
-                SelectionView(
-                        numarAles: $numarAles,
-                        numarIntrebari: $numarIntrebari,
-                        ultimulApasat: $ultimulApasat,
-                        ultimulApasatIntrebari: $ultimulApasatIntrebari,
-                        startApasat: $startApasat,
-                        pulse: $pulse,
-                        hasStarted: $hasStarted,
-                        intrebari: $intrebari,
-                        numereIntrebari: numereIntrebari,
-                        onStart: {
-                            generareListaElemente(numarAles: numarAles ?? 0, numarIntrebari: numarIntrebari ?? 0)
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                withAnimation(.spring) {
-                                    hasStarted.toggle()
-                                }
-                            }
-                            withAnimation(.spring(response: 0.2, dampingFraction: 0.5)) {
-                                startApasat = true
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
-                                    startApasat = false
-                                }
-                            }
-                        }
-                ).transition(.asymmetric(
-                    insertion: .move(edge: .leading),
-                    removal: .move(edge: .leading)
-                ))
-            } else {
-                RadialGradient(
-                                gradient: Gradient(colors: [
-                                    Color(red: 1.0, green: 0.7, blue: 0.2), // Portocaliu deschis (Centru)
-                                    Color(red: 0.8, green: 0.3, blue: 0.0)  // Portocaliu închis (Margini)
-                                ]),
-                                center: .center,
-                                startRadius: 20,
-                                endRadius: 500
-                            )
+                
+                ZStack {
+                    RadialGradient(
+                                    gradient: Gradient(colors: [
+                                        Color(hex: "76c945"), // Verdele deschis din centru
+                                        Color(hex: "4a932c")  // Verdele mai închis de la margini
+                                    ]),
+                                    center: .center,       // Începe din mijloc
+                                    startRadius: 20,       // Raza unde începe prima culoare
+                                    endRadius: 500         // Raza unde se termină a doua culoare
+                                )
                     .ignoresSafeArea()
-                WoolTexture()
-                                .opacity(15)
-                GameView(numarIntrebare: $numarIntrebare, numarIntrebari: $numarIntrebari, intrebari: $intrebari, raspunsText: $raspunsText, score: $score, hasStarted: $hasStarted, numarAles: $numarAles, valoareEfect: $valoareEfect, valoareEfect2: $valoareEfect2, verificareRaspuns: verificareRaspuns(raspunsInt:), reset: reset)
-                    .transition(.asymmetric(
-                                    insertion: .move(edge: .trailing),
-                                    removal: .move(edge: .trailing)
-                                ))
-                   
+                    WoolTexture()
+                                    .opacity(15)
+                        
+                    SelectionView(
+                            numarAles: $numarAles,
+                            numarIntrebari: $numarIntrebari,
+                            ultimulApasat: $ultimulApasat,
+                            ultimulApasatIntrebari: $ultimulApasatIntrebari,
+                            startApasat: $startApasat,
+                            pulse: $pulse,
+                            hasStarted: $hasStarted,
+                            intrebari: $intrebari,
+                            numereIntrebari: numereIntrebari,
+                            onStart: {
+                                generareListaElemente(numarAles: numarAles ?? 0, numarIntrebari: numarIntrebari ?? 0)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    withAnimation(.spring) {
+                                        hasStarted.toggle()
+                                    }
+                                }
+                                withAnimation(.spring(response: 0.2, dampingFraction: 0.5)) {
+                                    startApasat = true
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                                        startApasat = false
+                                    }
+                                }
+                            }
+                    )
+                    .id(1)
+                    
+                    
+                }.transition(.move(edge: .leading))
+                
+            } else {
+                ZStack {
+                    RadialGradient(
+                                    gradient: Gradient(colors: [
+                                        Color(red: 1.0, green: 0.7, blue: 0.2), // Portocaliu deschis (Centru)
+                                        Color(red: 0.8, green: 0.3, blue: 0.0)  // Portocaliu închis (Margini)
+                                    ]),
+                                    center: .center,
+                                    startRadius: 20,
+                                    endRadius: 500
+                                )
+                        .ignoresSafeArea()
+                    WoolTexture()
+                                    .opacity(15)
+                    GameView(numarIntrebare: $numarIntrebare, numarIntrebari: $numarIntrebari, intrebari: $intrebari, raspunsText: $raspunsText, score: $score, hasStarted: $hasStarted, numarAles: $numarAles, valoareEfect: $valoareEfect, valoareEfect2: $valoareEfect2, verificareRaspuns: verificareRaspuns(raspunsInt:), reset: reset)
+                        .id(2)
+                        
+                       
+                }.transition(.move(edge: .trailing))
+                
                 
             }
             if arataMesaj == true {
@@ -252,7 +257,7 @@ struct ContentView: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.green.opacity(0.9))
+                    .background(.green.opacity(0.4))
                     .transition(.opacity)
                     .zIndex(1)
                 
@@ -276,7 +281,7 @@ struct ContentView: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.black.opacity(0.9))
+                    .background(.black.opacity(0.4))
                     .zIndex(1)
                     .ignoresSafeArea()
                 }
@@ -298,7 +303,7 @@ struct ContentView: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.purple.opacity(0.9))
+                    .background(.purple.opacity(0.5))
                     .ignoresSafeArea()
                     
                 }
