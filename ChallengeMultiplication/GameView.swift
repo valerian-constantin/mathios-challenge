@@ -164,7 +164,7 @@ struct GameView: View {
                     print("intrebari.count: \(intrebari.count)")
                     
                 } label: {
-                    Text("Stop")
+                    Text("Back")
                         .foregroundStyle(.red)
                         .fontWeight(.bold)
                         .font(.system(size: 25))
