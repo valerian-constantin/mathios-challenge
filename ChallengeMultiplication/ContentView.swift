@@ -208,7 +208,10 @@ struct ContentView: View {
                                 }
                             }
                         }
-                    ).transition(.slide)
+                ).transition(.asymmetric(
+                    insertion: .move(edge: .leading),
+                    removal: .move(edge: .leading)
+                ))
             } else {
                 RadialGradient(
                                 gradient: Gradient(colors: [
@@ -223,7 +226,10 @@ struct ContentView: View {
                 WoolTexture()
                                 .opacity(15)
                 GameView(numarIntrebare: $numarIntrebare, numarIntrebari: $numarIntrebari, intrebari: $intrebari, raspunsText: $raspunsText, score: $score, hasStarted: $hasStarted, numarAles: $numarAles, valoareEfect: $valoareEfect, valoareEfect2: $valoareEfect2, verificareRaspuns: verificareRaspuns(raspunsInt:), reset: reset)
-                    .transition(.slide)
+                    .transition(.asymmetric(
+                                    insertion: .move(edge: .trailing),
+                                    removal: .move(edge: .trailing)
+                                ))
                    
                 
             }

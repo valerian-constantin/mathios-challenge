@@ -219,7 +219,7 @@ struct GameView: View {
                 
         
         }.padding()
-            .transition(.slide)
+            
            
         
     }
