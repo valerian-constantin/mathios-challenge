@@ -148,11 +148,19 @@ struct GameView: View {
                 
                     print("INAINTE DE RESET: numarIntrebare: \(numarIntrebare)")
                     print("intrebari.count: \(intrebari.count)")
-                    intrebari.removeAll()
-                    numarAles = nil
-                    numarIntrebari = nil
-                    numarIntrebare = 0
-                    score = 0
+                    
+                    
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.40) {
+                            intrebari.removeAll()
+                            numarAles = nil
+                            numarIntrebari = nil
+                            numarIntrebare = 0
+                            score = 0
+                                
+                        
+                        
+                    }
                     
                     
                     
