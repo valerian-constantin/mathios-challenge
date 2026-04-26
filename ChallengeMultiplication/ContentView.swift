@@ -252,7 +252,7 @@ struct ContentView: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.green.opacity(0.4))
+                    .background(.green.opacity(0.9))
                     .transition(.opacity)
                     .zIndex(1)
                 
@@ -276,7 +276,7 @@ struct ContentView: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.black.opacity(0.4))
+                    .background(.black.opacity(0.9))
                     .zIndex(1)
                     .ignoresSafeArea()
                 }
@@ -298,7 +298,7 @@ struct ContentView: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.purple.opacity(0.5))
+                    .background(.purple.opacity(0.9))
                     .ignoresSafeArea()
                     
                 }
