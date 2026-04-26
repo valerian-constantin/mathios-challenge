@@ -173,7 +173,7 @@ struct GameView: View {
                         .clipShape(.rect(cornerRadius: 55))
                         .opacity(0.9)
                         .padding()
-                        .shadow(color: .green.opacity(0.7), radius: 35)
+                        .shadow(color: Color.red.opacity(0.3), radius: 10, x: 0, y: 4)
                         .scaleEffect(valoareEfect)
                 }
                 Button {
@@ -203,15 +203,15 @@ struct GameView: View {
                     
                 } label: {
                     Text("Verify")
-                        .foregroundStyle(Color(hex: "245c4c"))
+                        .foregroundStyle(.white)
                         .fontWeight(.bold)
                         .font(.system(size: 25))
                         .frame(width: 160, height: 80)
-                        .background(.white)
+                        .background(Color(hex: "245c4c"))
                         .clipShape(.rect(cornerRadius: 55))
                         .padding()
                         .opacity(0.9)
-                        .shadow(color: .green.opacity(0.7), radius: 35)
+                        .shadow(color: Color(hex: "1a3d28").opacity(0.6), radius: 10, x: 0, y: 4)
                         .scaleEffect(valoareEfect2)
                 }
             }
