@@ -152,6 +152,7 @@ struct GameView: View {
                     numarAles = nil
                     numarIntrebari = nil
                     numarIntrebare = 0
+                    score = 0
                     
                     
                     
